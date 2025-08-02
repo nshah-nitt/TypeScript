@@ -8,7 +8,6 @@
 let num: number = 42;
 let str: string = "hello";
 let bool: boolean = true;
-let bigInt: bigint = 100n;
 let sym: symbol = Symbol("id");
 let n: null = null;
 let u: undefined = undefined;
