@@ -3,6 +3,11 @@ class Employee {
     __firstName = '';
     __lastName = '';
     __age;
+    constructor(firstName, lastName, age) {
+        this.__firstName = firstName || '';
+        this.__lastName = lastName || '';
+        this.__age = age;
+    }
     set firstName(name) {
         if (name.trim() === '') {
             throw new Error("Name cannot be empty");
@@ -30,8 +35,10 @@ class Employee {
 class Developer extends Employee {
     __domain = '';
     __programmingLanguage = [];
-    constructor() {
-        super(); // call the parent class constructor
+    constructor(domain, programmingLanguage, ...item) {
+        super(...item); // call the parent class constructor
+        this.__domain = domain,
+            this.__programmingLanguage = programmingLanguage;
     }
     set domain(name) {
         if (name.trim() === '') {
@@ -48,12 +55,34 @@ class Developer extends Employee {
     get getDetails() {
         return `${this.fullName} is a developer who knows ${this.__programmingLanguage.length} programming languages.`;
     }
+    developerName() {
+        return `${this.__firstName}`;
+    }
 }
-let dev = new Developer();
-dev.firstName = "Naman";
-dev.lastName = "Shah";
-dev.age = 25;
-dev.domain = "Web Development";
-dev.programmingLanguage = ["JavaScript", "TypeScript", "Python"];
-console.log(dev.getDetails); // Naman Shah is a developer who knows 3
+// let dev = new Developer();
+// let dev2 = new Developer('Web Development',["JavaScript", "TypeScript", "Python"],"Naman","Shah",25)
+// console.log(dev2.developerName());
+// dev.firstName = "Naman";
+// dev.lastName = "Shah";
+// dev.age = 25;
+// dev.domain = "Web Development";
+// dev.programmingLanguage = ["JavaScript", "TypeScript", "Python"];
+// console.log(dev.getDetails); // Naman Shah is a developer who knows 3
+// abstract classes - These are classes that cannot be instantiated directly and are meant to be extended by other classes. They can contain abstract methods (methods without implementation) that must be implemented by the derived classes.
+class UIElement {
+    identifier;
+    constructor(identifier) {
+        this.identifier = identifier;
+    }
+}
+class Navbar extends UIElement {
+    constructor(identifier) {
+        super(identifier);
+    }
+    render(position) {
+        console.log(`Rendering Navbar at ${position} with identifier ${this.identifier}`);
+    }
+}
+let navbar = new Navbar("main-navbar");
+navbar.render('top'); // Rendering Navbar at top with identifier main-navbarxf
 export {};
