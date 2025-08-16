@@ -40,7 +40,9 @@ class Employee2 {
     get fullName() {
         return `${this._firstName} ${this.__lastName}`;
     }
+    static companyName = 'Kinshav Technologies'; // static property, can be accessed without creating an instance of the class
 }
+console.log(Employee2.companyName); // this can be accessed without creating an instance of the class
 let emp2 = new Employee2();
 emp2.firstName = "Naman";
 emp2.lastName = "Shah";
