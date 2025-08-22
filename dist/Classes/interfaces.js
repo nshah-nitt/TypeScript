@@ -46,4 +46,8 @@ class UserClas {
         console.log(`${this.firstname} ${this.lastname} logged out successfully.`);
     }
 }
+// interfaces can also be used to define the structure of functions, allowing you to specify the types of parameters and return values.
+const userlogin = (user) => {
+    return `${user.firstname} ${user.lastname} logged in with username ${user.username}`;
+};
 export {};

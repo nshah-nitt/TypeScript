@@ -53,3 +53,16 @@ class UserClas implements User {
         console.log(`${this.firstname} ${this.lastname} logged out successfully.`);
     }
 }
+
+// interfaces can also be used to define the structure of functions, allowing you to specify the types of parameters and return values.
+
+const userlogin = (user: User): string =>{
+    return `${user.firstname} ${user.lastname} logged in with username ${user.username}`;
+}
+
+// interfaces just like the classes can also be extended to create new interfaces that inherit properties and methods from existing ones. This allows for code reuse and better organization of types.
+
+interface Admin extends User {
+   role: 'admin' | 'superadmin' | 'moderator'| 'custodian'
+   permissions: string[]; // array of permissions
+}
