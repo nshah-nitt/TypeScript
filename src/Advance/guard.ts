@@ -52,7 +52,7 @@ const eric = new Student("Eric")
 const jennifer = new Teacher("jennifer","Maths")
 
 type Entity = Teacher | Student
-// instace of operator
+// instace of operator (instance of is only used non primitive types such as objects , for primitive types such as strings or boolean we need to use typeof)
 function teacherGrades(element: Entity) {
   // Open + read file OR reach out to database server
   if(element instanceof Teacher){
