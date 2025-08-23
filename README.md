@@ -2,12 +2,17 @@
 
 This repository serves as a personal playground for exploring and demonstrating various features of TypeScript. It contains a collection of code examples covering fundamental to advanced concepts.
 
+## Acknowledgements
+
+The concepts and examples in this repository are heavily inspired by the "Understanding TypeScript" course by Maximilian Schwarzmüller. The original resources can be found [here](https://github.com/mschwarzmueller/understanding-typescript-resources).
+
 ## Concepts Covered
 
 This project includes examples for:
 
 - **Core Concepts**: Interfaces, Classes, and Type Aliases.
-- **Advanced Types**: Union Types, Generics, and Mapped Types.
+- **Generics**: Creating reusable components that can work over a variety of types.
+- **Advanced Types**: Union Types and Mapped Types.
 - **Type Guards**: Using `instanceof` and `typeof` for type narrowing.
 - **Operators**: The `keyof` and `satisfies` operators.
 - **Utility Types**: Examples of built-in utility types like `Record<K, T>`.
