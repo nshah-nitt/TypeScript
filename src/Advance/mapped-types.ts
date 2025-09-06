@@ -38,3 +38,18 @@ type ResultType2 = NumProps<Operations,'add' | 'subtract'>
 type OmitProps<T,K extends keyof T> = {
     [P in Exclude<keyof T,K>]:number
 }
+
+// adding or removing default and readonly properties
+type Message<T,U extends keyof T> = {
+    readonly [P in keyof Pick<T,U>]: T[P]
+}
+
+type Immutable = Message<Operations,'add' | 'subtract' | 'multiply'>
+
+let msg:Immutable = {
+   add:(a:number,b:number)=> a+b,
+   subtract:(a:number,b:number)=> a-b,
+   multiply:(a:number,b:number)=> a*b,
+}
+
+// msg.add = (a:number,b:number) => a*b // Error: Cannot assign to 'add' because it is a read-only property
