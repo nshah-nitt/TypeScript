@@ -10,7 +10,7 @@ class User {
     }
 }
 // alternative way using public keywords (which automatically creates properties and can be used outside of the class)
-// if we omit the public keyword then also the property would be treated as public but inittialization of the property would not be done in the constructor
+// if we omit the public keyword then also the property would be treated as public but initialization of the property would not be done in the constructor
 class User2 {
     name;
     age;

@@ -1,4 +1,3 @@
-import { styleText } from "util";
 
 let name = ['Naman','Kiran']
 
